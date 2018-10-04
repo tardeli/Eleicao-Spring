@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: DaRocha
+Build-Jdk: 10.0.2
+Implementation-Title: Eleicao-Spring
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: br.com.tardeli
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Eleicao-Spring
+Created-By: Maven Integration for Eclipse
+
