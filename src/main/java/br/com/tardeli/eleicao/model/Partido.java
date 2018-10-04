@@ -9,7 +9,7 @@ import javax.persistence.Id;
 /**
  * Classe que representa um partido
  * 
- * @author Roberson Alves
+ * @author DaRocha
  *
  */
 @Entity
@@ -22,54 +22,44 @@ public class Partido {
 	private String nome;
 	@Column(length = 10, nullable = false)
 	private String sigla;
+		
+	public Partido() {
+		super();
+	}
 
-	// construtor
 	public Partido(Integer codigo, String nome, String sigla) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.sigla = sigla;
 	}
 
-	/**
-	 * @return the codigo
-	 */
 	public Integer getCodigo() {
 		return codigo;
 	}
 
-	/**
-	 * @param codigo the codigo to set
-	 */
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
-	/**
-	 * @return the nome
-	 */
 	public String getNome() {
 		return nome;
 	}
 
-	/**
-	 * @param nome the nome to set
-	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	/**
-	 * @return the sigla
-	 */
 	public String getSigla() {
 		return sigla;
 	}
 
-	/**
-	 * @param sigla the sigla to set
-	 */
 	public void setSigla(String sigla) {
 		this.sigla = sigla;
 	}
 
+	@Override
+	public String toString() {
+		return "Partido [codigo=" + codigo + ", nome=" + nome + ", sigla=" + sigla + "]";
+	}
+	
 }

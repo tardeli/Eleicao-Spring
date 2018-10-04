@@ -1,8 +1,8 @@
 package br.com.tardeli.eleicao.model;
 
 /**
- * Interface de valida��o
- * @author Roberson Alves
+ * Interface de validação
+ * @author DaRocha
  *
  */
 public interface Validador {

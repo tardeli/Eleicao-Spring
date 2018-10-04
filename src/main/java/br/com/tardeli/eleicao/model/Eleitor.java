@@ -7,7 +7,7 @@ import javax.persistence.Id;
 /**
  * Classe que representa um Eleitor
  * 
- * @author Roberson Alves
+ * @author DaRocha
  *
  */
 @Entity
@@ -22,73 +22,57 @@ public class Eleitor implements Validador {
 	private Short zonaEleitoral;
 	@Column(nullable = false)
 	private Short secao;
+	
 
-	/**
-	 * @return the numeroTitulo
-	 */
+	public Eleitor() {
+		super();
+	}
+
+	public Eleitor(Long numeroTitulo, String nome, String nomeMae, Short zonaEleitoral, Short secao) {
+		super();
+		this.numeroTitulo = numeroTitulo;
+		this.nome = nome;
+		this.nomeMae = nomeMae;
+		this.zonaEleitoral = zonaEleitoral;
+		this.secao = secao;
+	}
+
 	public Long getNumeroTitulo() {
 		return numeroTitulo;
 	}
-
-	/**
-	 * @param numeroTitulo the numeroTitulo to set
-	 */
+	
 	public void setNumeroTitulo(Long numeroTitulo) {
 		this.numeroTitulo = numeroTitulo;
 	}
 
-	/**
-	 * @return the nome
-	 */
 	public String getNome() {
 		return nome;
 	}
 
-	/**
-	 * @param nome the nome to set
-	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	/**
-	 * @return the nomeMae
-	 */
 	public String getNomeMae() {
 		return nomeMae;
 	}
 
-	/**
-	 * @param nomeMae the nomeMae to set
-	 */
 	public void setNomeMae(String nomeMae) {
 		this.nomeMae = nomeMae;
 	}
 
-	/**
-	 * @return the zonaEleitoral
-	 */
 	public Short getZonaEleitoral() {
 		return zonaEleitoral;
 	}
 
-	/**
-	 * @param zonaEleitoral the zonaEleitoral to set
-	 */
 	public void setZonaEleitoral(Short zonaEleitoral) {
 		this.zonaEleitoral = zonaEleitoral;
 	}
 
-	/**
-	 * @return the secao
-	 */
 	public Short getSecao() {
 		return secao;
 	}
 
-	/**
-	 * @param secao the secao to set
-	 */
 	public void setSecao(Short secao) {
 		this.secao = secao;
 	}
@@ -96,5 +80,11 @@ public class Eleitor implements Validador {
 	@Override
 	public boolean validarDocumento(Long numero) {
 		return numero > 100;
+	}
+
+	@Override
+	public String toString() {
+		return "Eleitor [numeroTitulo=" + numeroTitulo + ", nome=" + nome + ", nomeMae=" + nomeMae + ", zonaEleitoral="
+				+ zonaEleitoral + ", secao=" + secao + "]";
 	}
 }

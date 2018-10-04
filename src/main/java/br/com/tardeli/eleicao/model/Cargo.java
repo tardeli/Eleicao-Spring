@@ -1,9 +1,9 @@
 package br.com.tardeli.eleicao.model;
 
 /**
- * Enumerador que representa a lista de poss�veis cargos
+ * Enumerador que representa a lista de possiveis cargos
  * 
- * @author Roberson Alves
+ * @author DaRocha
  *
  */
 public enum Cargo {
