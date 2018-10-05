@@ -43,10 +43,8 @@ public class EleicaoSpringApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		
-		
-		/*
-		//------------------Cadastrar um partido-------------
+				
+		//------------------Cadastrar partido-------------
 		Partido p_1 = new Partido(null, "Partido Social", "PS");
 		Partido p_2 = new Partido(null, "Partido do Brasil", "PB");
 		Partido p_3 = new Partido(null, "Partido Social brasileiro", "PSL");
@@ -56,45 +54,34 @@ public class EleicaoSpringApplication implements CommandLineRunner {
 		partidoServiceImpl.salvar(p_2);
 		partidoServiceImpl.salvar(p_3);
 		partidoServiceImpl.salvar(p_4);
-			
-		Partido p = new Partido();
-		p = partidoServiceImpl.buscarPorCodigo(38);
-		System.out.println(p);
 		
-		//------------------Cadastrar um eleitor-------------
+		//------------------Cadastrar candidato-------------
+		Partido busca_p1 =  partidoServiceImpl.buscarPorCodigo(2);
+		Partido busca_p2 =  partidoServiceImpl.buscarPorCodigo(3);
+		 
+		Candidato c_1 = new Candidato(null,"João Rodrigues", 123L, busca_p1, Cargo.GOVERNADOR);
+		Candidato c_2 = new Candidato(null,"Marilse Siqueira", 1243L, busca_p2, Cargo.DEPUTADO_ESTADUAL);
+		candidatoServiceImpl.salvar(c_1);
+		candidatoServiceImpl.salvar(c_2);
+					
+		//------------------Cadastrar eleitor-------------
 		Eleitor e_1 = new Eleitor(12345L, "Fernando Cardoso", "Joana da silva", (short) 12345, (short) 197);
 		Eleitor e_2 = new Eleitor(12346L, "Maria da Silva", "Lucia de Almeida", (short) 12346, (short) 198);
 		eleitorServiceImpl.salvar(e_1);
 		eleitorServiceImpl.salvar(e_2);
+			
+		//------------------Cadastrar voto-----------------
+		Eleitor eleitor_1 = eleitorServiceImpl.buscarPorTitulo(12345L);
+		Eleitor eleitor_2 = eleitorServiceImpl.buscarPorTitulo(12346L);
+		Candidato candidato_1 = candidatoServiceImpl.buscarPorCodigo(5);
+		Candidato candidato_2 = candidatoServiceImpl.buscarPorCodigo(6);
 		
-
-		Eleitor e = eleitorServiceImpl.buscarPorTitulo(12345L);
-		System.out.println(e);
+		Voto voto_1 = new Voto(null, new Date(), 12L, candidato_1, eleitor_1);
+		Voto voto_2 = new Voto(null, new Date(), 12L, candidato_2, eleitor_2);
 		
+		votoServiceImpl.salvar(voto_1);
+		votoServiceImpl.salvar(voto_2);
 		
-		//------------------Cadastrar um candidato-------------
-		Partido p_1 =  partidoServiceImpl.buscarPorCodigo(40);
-		Partido p_2 =  partidoServiceImpl.buscarPorCodigo(37);
-		 
-		Candidato c_1 = new Candidato(null,"João Rodrigues", 123L, p_1, Cargo.GOVERNADOR);
-		Candidato c_2 = new Candidato(null,"Marilse Siqueira", 1243L, p_2, Cargo.DEPUTADO_ESTADUAL);
-		candidatoServiceImpl.salvar(c_1);
-		candidatoServiceImpl.salvar(c_2);
-		
-		
-		
-		//------------------Cadastrar um voto-----------------
-		Eleitor e_1 = eleitorServiceImpl.buscarPorTitulo(12345L);
-		Eleitor e_2 = eleitorServiceImpl.buscarPorTitulo(12346L);
-		Candidato c_1 = candidatoServiceImpl.buscarPorCodigo(42);
-		Candidato c_2 = candidatoServiceImpl.buscarPorCodigo(41);
-		
-		Voto v_1 = new Voto(null, new Date(), 12L, c_1, e_1);
-		Voto v_2 = new Voto(null, new Date(), 12L, c_2, e_2);
-		
-		votoServiceImpl.salvar(v_1);
-		votoServiceImpl.salvar(v_2);
-		*/
 	}
 	
 }
