@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 import br.com.tardeli.eleicao.model.Candidato;
 import br.com.tardeli.eleicao.model.Cargo;
@@ -25,6 +27,9 @@ import br.com.tardeli.eleicao.service.impl.VotoServiceImpl;
 @SpringBootApplication
 public class EleicaoSpringApplication implements CommandLineRunner {
 
+	//extends SpringBootServletInitializer
+	
+	
 	@Autowired
 	private CandidatoServiceImpl candidatoServiceImpl;
 	
@@ -37,13 +42,32 @@ public class EleicaoSpringApplication implements CommandLineRunner {
 	@Autowired
 	private VotoServiceImpl votoServiceImpl;
 	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(EleicaoSpringApplication.class, args);
 	}
+	
+	//@Override
+	//protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+	//	return builder.sources(EleicaoSpringApplication.class);
+	//}
+	
+	
 
+	//implementar a interface  implements CommandLineRunner
+	
 	@Override
 	public void run(String... args) throws Exception {
 				
+		Integer varialvel = 31;
+		List<Voto> votos = votoServiceImpl.porCandidato(31);
+		for (Voto voto : votos) {
+			System.out.println(voto);
+		}
+
+		
+		/*System.out.println("Início do cadastro usando mysql - bd = eleicao");
+					
 		//------------------Cadastrar partido-------------
 		Partido p_1 = new Partido(null, "Partido Social", "PS");
 		Partido p_2 = new Partido(null, "Partido do Brasil", "PB");
@@ -78,10 +102,20 @@ public class EleicaoSpringApplication implements CommandLineRunner {
 		
 		Voto voto_1 = new Voto(null, new Date(), 12L, candidato_1, eleitor_1);
 		Voto voto_2 = new Voto(null, new Date(), 12L, candidato_2, eleitor_2);
-		
+				
 		votoServiceImpl.salvar(voto_1);
 		votoServiceImpl.salvar(voto_2);
 		
+		List<Voto> listaVotos = votoServiceImpl.listar();
+		
+		for (Voto voto : listaVotos) {
+			System.out.println(voto);
+		}
+		
+		
+		System.out.println("Dados salvos com sucesso!");
+		*/
 	}
+	
 	
 }

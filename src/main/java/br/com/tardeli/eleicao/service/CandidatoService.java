@@ -2,7 +2,7 @@ package br.com.tardeli.eleicao.service;
 
 import java.util.List;
 
-import br.com.tardeli.eleicao.model.Candidato;;;
+import br.com.tardeli.eleicao.model.Candidato;
 
 public interface CandidatoService {
 	public void salvar(Candidato candidato);

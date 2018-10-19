@@ -9,4 +9,5 @@ public interface VotoService {
 	public void excluir(Voto voto);
 	public List<Voto> listar();
 	public Voto buscarPorCodigo(Long codigo);
+	public List<Voto> porCandidato(Integer candidato);
 }

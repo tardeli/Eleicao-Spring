@@ -24,7 +24,7 @@ public class Partido {
 	private String sigla;
 		
 	public Partido() {
-		super();
+	
 	}
 
 	public Partido(Integer codigo, String nome, String sigla) {

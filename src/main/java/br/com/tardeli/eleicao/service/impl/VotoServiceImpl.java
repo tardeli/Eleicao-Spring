@@ -34,4 +34,10 @@ public class VotoServiceImpl implements VotoService {
 	public Voto buscarPorCodigo(Long codigo) {
 		return votoRepository.findById(codigo).orElse(new Voto());
 	}
+
+	@Override
+	public List<Voto> porCandidato(Integer candidato) {
+		
+		return votoRepository.porCandidato(candidato);
+	}
 }

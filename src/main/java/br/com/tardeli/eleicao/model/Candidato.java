@@ -24,7 +24,7 @@ public class Candidato implements Validador {
 	private String nome;
 	@Column(nullable = false)
 	private Long cpf;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "partido_cod")
 	private Partido partido;
 	@Column
